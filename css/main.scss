@@ -2,15 +2,28 @@
 @import "./sidebar.scss";
 
 $active-menu-border-color: #ec7c17;
+$navbar-height: 77px;
+$content-bg: #f5f7f8;
+$content-text-color: #666666;
+$sidebar-left-width: 167px;
 
+html, body, .wrapper {
+    height: 100%;
+    background-color: $content-bg;
+}
 
 .wrapper {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-top: $navbar-height;
+
 
     .layer {
         position: absolute;
         top: 0;
         left: 0;
+        z-index: 1031;
         background-color: black;
         width: 100%;
         height: 0%;
@@ -20,6 +33,7 @@ $active-menu-border-color: #ec7c17;
         &.open {
             height: 100%;
             opacity: 0.5;
+            position: fixed;
         }
     }
 }
@@ -29,6 +43,11 @@ $active-menu-border-color: #ec7c17;
     list-style: none;
     padding: 0;
     margin: 0;
+
+    overflow-y: auto;
+    height: 100%;
+    -webkit-overflow-scrolling: touch;
+
 
     li {
         a {
@@ -48,6 +67,9 @@ $active-menu-border-color: #ec7c17;
 
 .compliance-calendar {
     font-size: 14px;
+    overflow-y: auto;
+    height: 100%;
+    -webkit-overflow-scrolling: touch;
 
     .time, .title {
         display: block;
@@ -80,7 +102,7 @@ $active-menu-border-color: #ec7c17;
                 border-left: 6px solid #7d9bf5;
             }
 
-            &:last-child {
+            &:nth-child(2) {
                 border-left: 6px solid #f0bb4a;
             }
         }
@@ -88,78 +110,165 @@ $active-menu-border-color: #ec7c17;
 }
 
 
+.navbar {
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 -3px 12px 0px #c5c5c5;
+    padding-left: 5px;
+    padding-right: 5px;
 
-.navbar-toggler {
-    &.left {
-        display: inline-block;
+    .navbar-toggler {
+        &.left {
+            display: inline-block;
+        }
+    }
+
+    .navbar-brand-parent {
+        text-align: center;
+    }
+
+    .nav-user {
+        display: none;
+
+        .fa {
+            color: #7c90a3
+        }
+
+        button::after {
+            content: none;
+            color:#7c90a3;
+        }
+
+        .username {
+            letter-spacing: -0.4px;
+        }
+
     }
 }
 
-.navbar-brand-parent {
-    text-align: center;
+.content {
+    padding: 15px 15px;
+    flex: 1;
+    color: $content-text-color;
+
+    h3 {
+        font-size: 18px;
+    }
+
+    .entry-header {
+        padding: 20px 0;
+
+        h3 {
+            margin: 0;
+        }
+    }
+
+    .nav-pills {
+        .nav-item {
+            margin-bottom: 15px;
+            width: 100%;
+            text-align: center;
+
+            .badge {
+                color: #FFFFFF;
+                background-color: $orange;
+                padding: 7px 10px;
+                font-size: 14px;
+                margin-left: 20px;
+            }
+        }
+
+        .nav-link {
+            background-color: $grey;
+            color: white;
+            border-radius: 4px;
+            min-width: 150px;
+        }
+
+        .nav-link.active, .nav-pills .show > .nav-link {
+            background-color: $green;
+        }
+    }
+
+    // allows in-between spacing for top leve
+    > .nav-pills > .nav-item > .nav-link {
+        display: flex;
+        justify-content: space-between;
+    }
+
 }
 
-.nav-user {
-    display: none;
 
-    .fa {
-        color: #7c90a3
-    }
-
-    button::after {
-        content: none;
-        color:#7c90a3;
-    }
-
-    .username {
-        letter-spacing: -0.4px;
-    }
-
-}
 
 @media (min-width: 576px) {
-    .navbar-brand-parent {
-        text-align: initial;
+    .navbar {
+        padding-left: 1rem;
+        padding-right: 1rem;
+
+        .navbar-brand-parent {
+            text-align: initial;
+        }
+    }
+
+    .content {
+        padding: 30px;
+
+        .nav-pills {
+            margin-bottom: 30px;
+
+            .nav-item {
+                margin-bottom: 0;
+                display: inline-block;
+                width: auto;
+                margin-right: 30px;
+                text-align: center;
+                min-width: 150px;
+            }
+
+            .nav-link {
+                display: inline-block;
+            }
+        }
     }
 }
 
 
 
 @media (min-width: 768px) {
-    $sidebarLeftWidth: 167px;
+    .navbar {
+        width: calc(100% - #{$sidebar-left-width});
+        left: auto;
 
-    .navbar .nav .nav-item {
-        margin-left: 10px;
-    }
+        .navbar-brand-parent {
+            width: initial;
+            text-align: left;
+        }
 
-    .navbar-brand-parent {
-        width: initial;
-        text-align: left;
-    }
+        .navbar-toggler.left {
+            display: none;
+        }
 
-    .navbar-toggler.left {
-        display: none;
-    }
-
-    .nav-user {
-        display: inline-block;
-    }
-
-
-    .wrapper .layer {
-        display: none;
+        .nav-user {
+            display: inline-block;
+        }
     }
 
     .wrapper {
-        padding-left: $sidebarLeftWidth;
-    }
+        padding-left: $sidebar-left-width;
 
-    .wrapper .sidebar.left {
-        transition: none;
-        transform: none;
-        position: absolute;
-        width: $sidebarLeftWidth;
+        .layer {
+            display: none;
+        }
+
+        .sidebar.left {
+            transition: none;
+            transform: none;
+            position: absolute;
+            width: $sidebar-left-width;
+        }
     }
 }
 
+
+@import "./my-training.scss";
 

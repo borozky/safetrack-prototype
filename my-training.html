@@ -1,0 +1,209 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>Layout | Safetrac</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fafafa">
+
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.css"
+        integrity="sha256-Nfu23DiRqsrx/6B6vsI0T9vEVKq1M6KgO8+TV363g3s=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/main.min.css">
+</head>
+
+<body>
+    <!--[if IE]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+    <![endif]-->
+
+    <div class="wrapper">
+
+        <nav class="sidebar left">
+            <ul class="menu">
+                <li>
+                    <a href="dashboard.html">
+                        <i class="fa fa-home"></i> Dashboard
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="my-training.html">
+                        <i class="fa fa-black-tie"></i> My Training
+                    </a>
+                </li>
+                <li>
+                    <a href="my-account.html">
+                        <i class="fa fa-user"></i> My Account
+                    </a>
+                </li>
+                <li>
+                    <a href="task.html">
+                        <i class="fa fa-check-square-o"></i> Task
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <nav class="sidebar right">
+            <a href="#" class="close-sidebar">
+                <i class="fa fa-times"></i>
+            </a>
+            <div class="compliance-calendar">
+                <h4 class="text-center">COMPLIANCE TRAINING</h4>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <a href="#">
+                            <span class="time">01/08/2018, 3pm</span>
+                            <span class="title">Compliance Training</span>
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="#">
+                            <span class="time">21/08/2018, 3pm</span>
+                            <span class="title">Compliance Training</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+
+        <div class="navbar fixed-top navbar-light sm-light">
+            <button type="button" class="navbar-toggler left border-0" data-target=".sidebar.left">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="navbar-brand-parent">
+                <a href="#" class="navbar-brand" style="margin: 0">
+                    <img src="./img/logo.png" alt="Logo" height="50px">
+                </a>
+            </div>
+
+            <div class="nav">
+                <div class="nav-item d-none d-sm-block">
+                    <a href="#" class="btn">
+                        <svg version="1.2" preserveAspectRatio="none" viewBox="0 0 24 24" style="opacity: 1; mix-blend-mode: normal; fill: rgb(145, 145, 145); width: 24px; height: 24px;" >
+                            <g>
+                                <path xmlns:default="http://www.w3.org/2000/svg" d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm9 7h-6v13h-2v-6h-2v6H9V9H3V7h18v2z" style="fill: rgb(145, 145, 145);"></path>
+                            </g>
+                        </svg>
+                    </a>
+                </div>
+                <div class="dropdown nav-item nav-user">
+                    <button class="btn dropdown-toggle" type="button" id="NavUser" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-2x fa-user-circle-o align-middle"></i>
+                        <b class="username">John Smith</b>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="NavUser">
+                        <a class="dropdown-item" href="#">
+                            <i class="fa fa-pencil"></i> Edit profile
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            <i class="fa fa-sign-out"></i> Logout
+                        </a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <button type="button" class="navbar-toggler right border-0" data-target=".sidebar.right">
+                        <svg version="1.2" preserveAspectRatio="none" viewBox="0 0 24 24"
+                            style="opacity: 1; mix-blend-mode: normal; fill: #36434d; filter: drop-shadow(rgba(0, 0, 0, 0.2) 0px 2px 1.83333px); width: 32px; height: 32px;">
+                            <g>
+                                <path xmlns:default="http://www.w3.org/2000/svg" id="calendar"
+                                    d="M4.67,17h3v3h-3V17z M8.33,17h3.33v3H8.34v-3H8.33z M4.67,13h3v3.33h-3V13z M8.33,13h3.33v3.33H8.34V13H8.33z   M4.67,9.33h3v3h-3V9.33z M12.33,17h3.33v3h-3.33V17z M8.33,9.34h3.33v3H8.34v-3H8.33z M16.33,17h3v3h-3V17z M12.33,13h3.33v3.33  h-3.33V13z M8.57,7.57c-0.06,0.06-0.14,0.1-0.23,0.1H7.67C7.49,7.66,7.35,7.52,7.34,7.34v-3c0-0.18,0.15-0.33,0.33-0.34h0.67  c0.18,0.01,0.32,0.15,0.33,0.33v3C8.67,7.42,8.64,7.51,8.57,7.57z M16.33,13h3v3.33h-3V13z M12.33,9.34h3.33v3h-3.33V9.34z   M16.33,9.34h3v3h-3V9.34z M16.56,7.58c-0.06,0.06-0.14,0.1-0.23,0.1h-0.67c-0.18-0.01-0.32-0.15-0.33-0.33v-3  C15.32,4.16,15.47,4.01,15.66,4c0,0,0,0,0,0h0.67c0.18,0.01,0.32,0.15,0.33,0.33v3c0,0.09-0.03,0.18-0.09,0.24L16.56,7.58z   M20.66,6.68c-0.01-0.73-0.6-1.32-1.33-1.33H18v-1c0-0.92-0.75-1.67-1.67-1.67l0,0h-0.67C14.75,2.69,14.01,3.43,14,4.34v1h-4v-1  c0-0.92-0.74-1.66-1.66-1.67H7.67C6.75,2.67,6,3.42,6,4.34l0,0v1H4.67c-0.73,0.01-1.32,0.6-1.33,1.33V20  c0.01,0.73,0.6,1.32,1.33,1.33h14.66c0.73-0.01,1.32-0.6,1.33-1.33V6.68L20.66,6.68L20.66,6.68z"
+                                    style="fill: rgb(54, 67, 77);">
+                                </path>
+                            </g>
+                        </svg>
+                    </button>
+                </div>
+            </div><!-- .nav -->
+
+        </div>
+
+        <div class="content" id="MyTraining">
+
+            <div class="entry-header">
+                <h3>MY TRAINING</h3>
+            </div>
+
+            <ul class="nav nav-pills" id="my-training-tab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="compliance-courses-tab" data-toggle="pill" href="#compliance-courses" role="tab"
+                        aria-controls="compliance-courses" aria-selected="true">
+                        <span class="training-category">COMPLIANCE</span>
+                        <span class="badge badge-warning">4</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="soft-skills-tab" data-toggle="pill" href="#soft-skills" role="tab"
+                    aria-controls="soft-skills" aria-selected="false">
+                        <span class="training-category">SOFT SKILLS</span>
+                        <span class="badge badge-warning">3</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="tab-content" id="my-training-tabContent">
+                <div class="tab-pane active" id="compliance-courses" role="tabpanel" aria-labelledby="compliance-courses-tab">
+
+                    <h3>COMPLIANCE COURSES</h3>
+                    <ul class="nav nav-pills" id="compliance-courses-assigned-tab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="compliance-courses-assigned-tab" data-toggle="pill" href="#compliance-courses-assigned" role="tab"
+                                aria-controls="compliance-courses-assigned" aria-selected="true">
+                                ASSIGNED
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="compliance-courses-optional-tab" data-toggle="pill" href="#compliance-courses-optional" role="tab"
+                                aria-controls="compliance-courses-optional" aria-selected="true">
+                                OPTIONAL
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="compliance-courses-tabContent">
+                        <div class="tab-pane active" id="compliance-courses-assigned" role="tabpanel" aria-labelledby="compliance-courses-assigned-tab">
+                            ASSIGNED tab content
+                        </div>
+                        <div class="tab-pane" id="compliance-courses-optional" role="tabpanel" aria-labelledby="compliance-courses-optional-tab">
+                            OPTIONAL tab content
+                        </div>
+                    </div>
+
+                </div>
+                <div class="tab-pane" id="soft-skills" role="tabpanel" aria-labelledby="soft-skills-tab">
+                    <div class="tab-pane-inner">
+
+                    </div>
+                </div>
+            </div><!-- end #my-training-tabContent.tab-content -->
+        </div><!-- end .content -->
+
+        <div class="layer"></div>
+
+
+    </div><!-- end .wrapper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"
+        integrity="sha256-0rguYS0qgS6L4qVzANq4kjxPLtvnp5nn2nB5G1lWRv4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.min.js"></script>
+</body>
+</html>
