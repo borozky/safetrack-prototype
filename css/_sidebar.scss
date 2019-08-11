@@ -1,0 +1,52 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    z-index: 1;
+    color: #FFF;
+    width: 240px;
+    transition: transform 0.3s;
+    
+    &.left {
+        left: 0;
+        background-color: $blue;
+        -webkit-transform: translate3d(-100%,0,0);
+        transform: translate3d(-100%,0,0);
+    }
+
+    &.right {
+        right: 0;
+        width: 167px;
+        -webkit-transform: translate3d(100%,0,0);
+        transform: translate3d(100%,0,0);
+        background-color: $darkgrey;
+        width: 240px;
+        
+
+        .close-sidebar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: white;
+            font-size: 28px;
+            background-color: $darkgrey;
+            padding: 3px 15px 6px 15px;
+            text-align: center;
+            display: none;
+        }
+
+        &.open {
+            .close-sidebar {
+                display: inline-block;
+                left: -52px;
+            }
+        }
+
+    }
+
+    &.open {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+
+}
