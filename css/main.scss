@@ -8,12 +8,10 @@ $content-text-color: #666666;
 $sidebar-left-width: 167px;
 
 html, body, .wrapper {
-    height: 100%;
     background-color: $content-bg;
 }
 
 .wrapper {
-    position: relative;
     display: flex;
     flex-direction: column;
     padding-top: $navbar-height;
