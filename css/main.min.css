@@ -271,6 +271,7 @@ body,
 
   .wrapper {
     padding-left: 167px;
+    background-color: #35507d;
   }
 
   .wrapper .layer {
@@ -282,6 +283,10 @@ body,
     transform: none;
     position: absolute;
     width: 167px;
+  }
+
+  .wrapper .content {
+    background-color: #f5f7f8;
   }
 }
 
@@ -310,6 +315,11 @@ body,
   text-align: right;
   display: inline-block;
   margin-bottom: 30px;
+  margin-top: 30px;
+  vertical-align: top;
+  position: relative;
+  width: 100%;
+  border-radius: 4px;
 }
 
 #MyTraining .course-list .course > .badge {
@@ -318,12 +328,25 @@ body,
   padding: 9px 28px;
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
+  position: absolute;
+  top: -30px;
+  right: 0;
 }
 
 #MyTraining .course-list .course .course-inner {
   text-align: left;
   font-size: 16px;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 10px 0px;
+  transition: box-shadow 0.3s;
+  position: relative;
+}
+
+#MyTraining .course-list .course .course-inner:hover {
+  box-shadow: #13bbb7 0px 1px 10px 0px;
+}
+
+#MyTraining .course-list .course .course-inner .course-content {
+  min-height: 186px;
 }
 
 #MyTraining .course-list .course .course-inner .course-content .course-description {
@@ -355,6 +378,18 @@ body,
   font-size: 23px;
 }
 
+#MyTraining .course-list .course.course-overdue {
+  margin-top: 30px;
+}
+
+#MyTraining .course-list .course.course-not-open {
+  margin-top: 30px;
+}
+
+#MyTraining .course-list .course.course-not-open .course-content .course-description {
+  height: auto;
+}
+
 @media (min-width: 576px) {
   #MyTraining .tab-pane {
     padding: 30px;
@@ -369,6 +404,23 @@ body,
     margin-right: 15px;
     margin-left: 15px;
     width: calc(50% - 35px);
+  }
+
+  #MyTraining .course-list .course .course-inner {
+    display: flex;
+    flex-direction: column;
+    min-height: 331px;
+  }
+
+  #MyTraining .course-list .course .course-inner .course-content {
+    flex: 1;
+  }
+
+  #MyTraining .course-list .course .course-image-parent {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
   }
 }
 

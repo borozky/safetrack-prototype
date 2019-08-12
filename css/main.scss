@@ -253,6 +253,7 @@ html, body, .wrapper {
 
     .wrapper {
         padding-left: $sidebar-left-width;
+        background-color: $blue;
 
         .layer {
             display: none;
@@ -263,6 +264,10 @@ html, body, .wrapper {
             transform: none;
             position: absolute;
             width: $sidebar-left-width;
+        }
+
+        .content {
+            background-color: #f5f7f8;
         }
     }
 }
