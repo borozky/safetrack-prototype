@@ -125,10 +125,7 @@ $(function() {
             cols = 3 + Math.floor((width - 1075) / 275)
         }
 
-        var row = Math.ceil((sourceIndex + 1) / cols);
-
-        var useIndex = (cols * Math.ceil((sourceIndex + 1) / cols)) - 1
-        console.log({sourceIndex, row, cols, useIndex})
+        var useIndex = (cols * Math.ceil((sourceIndex + 1) / cols)) - 1;
         appendElementToCourseList($element, useIndex);
     }
 
