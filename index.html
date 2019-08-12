@@ -8,7 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#fafafa">
 
-    <link rel="manifest" href="site.webmanifest">
     <link rel="apple-touch-icon" href="icon.png">
     <!-- Place favicon.ico in the root directory -->
 
@@ -31,7 +30,7 @@
         <nav class="sidebar left">
             <ul class="menu">
                 <li>
-                    <a href="dashboard.html">
+                    <a href="empty.html">
                         <i class="fa fa-home"></i> Dashboard
                     </a>
                 </li>
@@ -41,12 +40,12 @@
                     </a>
                 </li>
                 <li>
-                    <a href="my-account.html">
+                    <a href="empty.html">
                         <i class="fa fa-user"></i> My Account
                     </a>
                 </li>
                 <li>
-                    <a href="task.html">
+                    <a href="empty.html">
                         <i class="fa fa-check-square-o"></i> Task
                     </a>
                 </li>
@@ -130,9 +129,189 @@
 
         </div>
 
-        <div class="content">
-            <div style="height: 2400px;"></div>
-        </div>
+        <div class="content" id="MyTraining">
+
+            <div class="entry-header">
+                <h3>MY TRAINING</h3>
+            </div>
+
+            <ul class="nav nav-pills" id="my-training-tab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="compliance-courses-tab" data-toggle="pill" href="#compliance-courses" role="tab"
+                        aria-controls="compliance-courses" aria-selected="true">
+                        <span class="training-category">COMPLIANCE</span>
+                        <span class="badge badge-warning">4</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="soft-skills-tab" data-toggle="pill" href="#soft-skills" role="tab"
+                    aria-controls="soft-skills" aria-selected="false">
+                        <span class="training-category">SOFT SKILLS</span>
+                        <span class="badge badge-warning">3</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="tab-content" id="my-training-tabContent">
+                <div class="tab-pane active" id="compliance-courses" role="tabpanel" aria-labelledby="compliance-courses-tab">
+
+                    <h3>COMPLIANCE COURSES</h3>
+                    <ul class="nav nav-pills" id="compliance-courses-assigned-tab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="compliance-courses-assigned-tab" data-toggle="pill" href="#compliance-courses-assigned" role="tab"
+                                aria-controls="compliance-courses-assigned" aria-selected="true">
+                                ASSIGNED
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="compliance-courses-optional-tab" data-toggle="pill" href="#compliance-courses-optional" role="tab"
+                                aria-controls="compliance-courses-optional" aria-selected="true">
+                                OPTIONAL
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="compliance-courses-tabContent">
+                        <div class="tab-pane active" id="compliance-courses-assigned" role="tabpanel" aria-labelledby="compliance-courses-assigned-tab">
+                            <div class="course-list">
+
+                                <div class="course course-overdue">
+                                    <span class="badge">10 DAYS(S) OVERDUE</span>
+                                    <div class="course-inner">
+                                        <div class="course-content">
+                                            <div class="course-description">
+                                                Anti Discrimination and Harrasment in workplace<br><br><br>
+                                            </div>
+                                            <div class="course-meta">
+                                                <p>
+                                                    <a href="#"><b><i class="fa fa-2x fa-book"></i></b></a>
+                                                    <a href="#"><b><i class="fa fa-2x fa-puzzle-piece"></i></b></a>
+                                                    <a href="#"><b><i class="fa fa-2x fa-pencil-square"></i></b></a>
+                                                </p>
+                                                <p>
+                                                    <span class="badge badge-secondary">DUE DATE: 27/03/2019</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="course-image-parent">
+                                            <img src="./img/V16_Privacy-33f2cd.png" alt="Anti Discrimination and Harrasment in workplace" class="img-fluid">
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="course course-overdue">
+                                    <span class="badge">10 DAYS(S) OVERDUE</span>
+                                    <div class="course-inner">
+                                        <div class="course-content">
+                                            <div class="course-description">
+                                                Discrimination
+                                            </div>
+                                            <div class="course-meta">
+                                                <p>
+                                                    <a href="#"><b><i class="fa fa-2x fa-book"></i></b></a>
+                                                    <a href="#"><b><i class="fa fa-2x fa-puzzle-piece"></i></b></a>
+                                                    <a href="#"><b><i class="fa fa-2x fa-pencil-square"></i></b></a>
+                                                </p>
+                                                <p>
+                                                    <span class="badge badge-secondary">DUE DATE: 27/03/2019</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="course-image-parent">
+                                            <img src="./img/Discrimination-222e0a.png" alt="Discrimination" class="img-fluid">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="course course-overdue">
+                                    <span class="badge">10 DAYS(S) OVERDUE</span>
+                                    <div class="course-inner">
+                                        <div class="course-content">
+                                            <div class="course-description">
+                                                Consumer Protection
+                                            </div>
+                                            <div class="course-meta">
+                                                <p>
+                                                    <a href="#" class="toggle-module"
+                                                        data-course-index="2"
+                                                        data-course-description="Consumer Protection"
+                                                        data-course-modules='[{"description":"Introduction","duedate":"27/08/2019","daysOverdue":10},{"description":"Introduction 2","duedate":"27/08/2019","daysOverdue":0}]'>
+                                                        <b>You have 2 modules</b>&nbsp; <i class="fa fa-chevron-down" style="font-size: 14px;"></i>
+                                                    </a>
+                                                </p>
+                                                <p>
+                                                    <span class="badge badge-secondary">DUE DATE: 27/03/2019</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="course-image-parent">
+                                            <img src="./img/Consumer-3692ae.png" alt="Consumer Protection" class="img-fluid">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="course course-not-open">
+                                    <div class="course-inner">
+                                        <div class="course-content">
+                                            <div class="course-description">
+                                                Work Health and Safety<br><br>
+                                                Test is not currently open.<br>
+                                                Reopens: 30 Nov 2024
+                                            </div>
+                                        </div>
+                                        <div class="course-image-parent">
+                                            <img src="./img/WHS-a03a56.png" alt="Anti Discrimination and Harrasment in workplace" class="img-fluid">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="course">
+                                    <div class="course-inner">
+                                        <div class="course-content">
+                                            <div class="course-description">
+                                                Consumer Protection
+                                            </div>
+                                            <div class="course-meta">
+                                                <p>
+                                                    <a href="#"><b><i class="fa fa-2x fa-book"></i></b></a>
+                                                    <a href="#"><b><i class="fa fa-2x fa-puzzle-piece"></i></b></a>
+                                                    <a href="#"><b><i class="fa fa-2x fa-pencil-square"></i></b></a>
+                                                </p>
+                                                <p>
+                                                    <span class="badge badge-secondary">DUE DATE: 27/03/2019</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="course-image-parent">
+                                            <img src="./img/uxpmod_cad1c49c208b483491bef98da9898e2c_108316009_image-b1e673-8fff4b.png" alt="Anti Discrimination and Harrasment in workplace" class="img-fluid">
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+                            <div class="course-module-list collapse">
+                                <div class="course-module-list-inner">
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="tab-pane" id="compliance-courses-optional" role="tabpanel" aria-labelledby="compliance-courses-optional-tab">
+                            <p>There are no courses under this category</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="tab-pane" id="soft-skills" role="tabpanel" aria-labelledby="soft-skills-tab">
+                    <div class="tab-pane-inner">
+                        <h3>SOFT SKILLS</h3>
+                        <p>There are no courses under this category</p>
+                    </div>
+                </div>
+            </div><!-- end #my-training-tabContent.tab-content -->
+        </div><!-- end .content -->
 
         <div class="layer"></div>
 
