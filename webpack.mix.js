@@ -11,14 +11,13 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.js('js/main.js', 'js/main.min.js')
-    .sass('css/main.scss', 'css/main.min.css')
+mix.js('js/main.js', 'dist/js/main.bundle.js')
+    .sass('scss/main.scss', 'dist/css/main.bundle.css')
     .browserSync({
         proxy: "http://localhost:8000",
         files: [
             './*.html',
-            './css/main.min.css',
-            './js/main.min.js'
+            './dist/*.*',
         ]
     });
 

@@ -1,4 +1,4 @@
 {
-    "/js/main.min.js": "/js/main.min.js",
-    "/css/main.min.css": "/css/main.min.css"
+    "/dist/js/main.bundle.js": "/dist/js/main.bundle.js",
+    "/dist/css/main.bundle.css": "/dist/css/main.bundle.css"
 }
