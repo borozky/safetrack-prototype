@@ -17,6 +17,7 @@
     "author": "Joshua Orozco",
     "license": "ISC",
     "devDependencies": {
+        "@types/jquery": "^3.3.31",
         "browser-sync": "^2.26.7",
         "browser-sync-webpack-plugin": "^2.0.1",
         "cross-env": "^5.2.0",
