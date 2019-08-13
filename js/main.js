@@ -60,8 +60,7 @@ class CourseModuleList {
     }
 }
 
-
-
+// setup javascript to handle left and right mobile sidebar
 (function() {
     var $leftSidebar = document.querySelector(".sidebar.left");
     var $rightSidebar = document.querySelector(".sidebar.right");
@@ -70,91 +69,133 @@ class CourseModuleList {
     var $rightSidebarToggler = document.querySelector(".navbar-toggler.right");
     var $closeRightSidebar = document.querySelector(".sidebar.right .close-sidebar");
 
+    var OPEN_CLASS = "open";
+
+    // open left sidebar
     if ($leftSidebarToggler) {
         $leftSidebarToggler.addEventListener("click", function(e) {
-            $leftSidebar.classList.add("open");
-            $layer.classList.add("open");
+            $leftSidebar.classList.add(OPEN_CLASS);
+            $layer.classList.add(OPEN_CLASS);
         })
     }
 
+    // open right sidebar
     if ($rightSidebarToggler) {
         $rightSidebarToggler.addEventListener("click", function(e) {
-            $rightSidebar.classList.add("open");
-            $layer.classList.add("open");
+            $rightSidebar.classList.add(OPEN_CLASS);
+            $layer.classList.add(OPEN_CLASS);
         })
     }
 
-
+    // close sidebar by clicking the dark layer
     if ($layer) {
         $layer.addEventListener("click", function(e) {
-            $layer.classList.remove("open");
-            $leftSidebar.classList.remove("open");
-            $rightSidebar.classList.remove("open");
+            $layer.classList.remove(OPEN_CLASS);
+            $leftSidebar.classList.remove(OPEN_CLASS);
+            $rightSidebar.classList.remove(OPEN_CLASS);
         })
     }
 
+    // close right sidebar by clicking the "X" button
     if ($closeRightSidebar) {
         $closeRightSidebar.addEventListener("click", function() {
-            $layer.classList.remove("open");
-            $rightSidebar.classList.remove("open");
+            $layer.classList.remove(OPEN_CLASS);
+            $rightSidebar.classList.remove(OPEN_CLASS);
         });
     }
 })();
 
+
 $(function() {
 
-    function appendElementToCourseList($element, index) {
+    /**
+     * Append the course modules' parent el to list of course.
+     * This is a needed so that list of course modules will be displayed
+     * below the course div
+     *
+     * @param {HTMLDivElement} $courseModules
+     * @param {number} index
+     */
+    function appendCourseModulesToCourseList($courseModules, index) {
         var $coursesList = $(".course-list").eq(0);
         var len = $coursesList.find(".course").length;
         if (len - 1 < index) {
-            $element.appendTo($coursesList);
+            $courseModules.appendTo($coursesList);
         } else {
-            $(".course-list > .course").eq(index).after($element);
+            $(".course-list > .course").eq(index).after($courseModules);
         }
     }
 
-    function relocateCourseModule($element) {
-        var sourceIndex = parseInt($element.attr("data-course-index") || 0);
+    /**
+     * Determines where course modules' parent element will be placed.
+     * The window's width will be accounted.
+     *
+     * This is a needed so that list of course modules will be displayed
+     * below the course div
+     *
+     * @param {HTMLDivElement} $courseModules
+     */
+    function relocateCourseModule($courseModules) {
+        var sourceIndex = parseInt($courseModules.attr("data-course-index") || 0);
         var width = $(window).width();
         var cols = 1;
-        if (width <= 575) {
+        if (width <= 575) { // at this width, courses are displayed in 1 column
             cols = 1;
         } else if (width <= 1075) {
             cols = 2;
         } else {
-            cols = 3 + Math.floor((width - 1075) / 275)
+            cols = 3 + Math.floor((width - 1075) / 275);
         }
 
         var useIndex = (cols * Math.ceil((sourceIndex + 1) / cols)) - 1;
-        appendElementToCourseList($element, useIndex);
+        appendCourseModulesToCourseList($courseModules, useIndex);
     }
 
+
+    /**
+     * Populate `.course-module-list-inner` with course modules
+     *
+     * @param {HTMLElement} $courseModule
+     * @param {string} title
+     * @param {any[]} courseModules
+     */
     function loadCourseModules($courseModule, title, courseModules = []) {
         var courseModuleList = new CourseModuleList(title, courseModules);
         $courseModule.find(".course-module-list-inner").html(courseModuleList.html());
     }
 
 
-    relocateCourseModule($(".course-module-list").eq(0));
+    /**
+     * Initialisation
+     */
+    function init() {
 
-    $(window).resize(function() {
-        var $modules = $(".course-module-list").eq(0)
-        relocateCourseModule($modules);
-    })
+        // Relocate course modules on ready and on resize
+        relocateCourseModule($(".course-module-list").eq(0));
+        $(window).resize(function() {
+            var $modules = $(".course-module-list").eq(0);
+            relocateCourseModule($modules);
+        })
 
-    $(".course-list").on("click", ".toggle-module", function(e) {
-        e.preventDefault()
+        // Handle clicks on "You have 2 modules"
+        // Use event delegation in-case courses are dynamically loaded
+        $(".course-list").on("click", ".toggle-module", function(e) {
+            e.preventDefault()
 
-        var $moduleList = $(".course-module-list").eq(0);
-        var sourceIndex = parseInt($(this).attr("data-course-index") || 0);
-        var courseDescription = $(this).attr("data-course-description");
-        var courseModules = JSON.parse($(this).attr("data-course-modules"));
+            var $moduleList = $(".course-module-list").eq(0);
+            var sourceIndex = parseInt($(this).attr("data-course-index") || 0);
+            var courseDescription = $(this).attr("data-course-description");
+            var courseModules = JSON.parse($(this).attr("data-course-modules"));
 
-        $moduleList.attr("data-course-index", sourceIndex);
-        relocateCourseModule($moduleList)
-        loadCourseModules($moduleList, courseDescription, courseModules);
-        $moduleList.collapse('toggle')
-    })
+            $moduleList.attr("data-course-index", sourceIndex);
+            relocateCourseModule($moduleList);
+            loadCourseModules($moduleList, courseDescription, courseModules);
+            $moduleList.collapse('toggle');
+        });
+
+    }
+
+    init();
 })
 
 
