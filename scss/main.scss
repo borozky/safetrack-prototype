@@ -21,8 +21,6 @@ html, body, .wrapper {
 }
 
 .wrapper {
-    display: flex;
-    flex-direction: column;
     padding-top: $navbar-height;
 
 
@@ -59,14 +57,12 @@ html, body, .wrapper {
     &.left {
         left: 0;
         background-color: $blue;
-        -webkit-transform: translate3d(-100%,0,0);
         transform: translate3d(-100%,0,0);
     }
 
     &.right {
         right: 0;
         width: 167px;
-        -webkit-transform: translate3d(100%,0,0);
         transform: translate3d(100%,0,0);
         background-color: $darkgrey;
         width: 240px;
@@ -93,7 +89,6 @@ html, body, .wrapper {
     }
 
     &.open {
-        -webkit-transform: translateZ(0);
         transform: translateZ(0);
     }
 }
@@ -146,7 +141,6 @@ html, body, .wrapper {
 
     .list-group {
         .list-group-item {
-            -webkit-border-radius: 0;
             border-radius: 0;
             background: none;
             color: white;
