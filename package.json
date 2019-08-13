@@ -3,9 +3,6 @@
     "version": "0.0.1",
     "description": "Safetrac compliance application html prototype",
     "main": "index.js",
-    "directories": {
-        "doc": "doc"
-    },
     "scripts": {
         "dev": "npm run development",
         "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
@@ -17,6 +14,7 @@
     "author": "Joshua Orozco",
     "license": "ISC",
     "devDependencies": {
+        "@types/jquery": "^3.3.31",
         "browser-sync": "^2.26.7",
         "browser-sync-webpack-plugin": "^2.0.1",
         "cross-env": "^5.2.0",
