@@ -1,5 +1,12 @@
-@import "./variables.scss";
-@import "./sidebar.scss";
+// COLORS
+$blue: #35507d;
+$green: #13bbb7;
+$red: #f03f42;
+$orange: #f27063;
+$grey: #666666;
+$darkgrey: #21292f;
+$lightgrey: #dedede;
+
 
 $active-menu-border-color: #ec7c17;
 $navbar-height: 77px;
@@ -7,6 +14,8 @@ $content-bg: #f5f7f8;
 $content-text-color: #666666;
 $sidebar-left-width: 167px;
 
+
+// WRAPPERS
 html, body, .wrapper {
     background-color: $content-bg;
 }
@@ -37,6 +46,60 @@ html, body, .wrapper {
 }
 
 
+// LEFT AND RIGHT SIDEBAR
+.sidebar {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    z-index: 1032;
+    color: #FFF;
+    width: 240px;
+    transition: transform 0.3s;
+
+    &.left {
+        left: 0;
+        background-color: $blue;
+        -webkit-transform: translate3d(-100%,0,0);
+        transform: translate3d(-100%,0,0);
+    }
+
+    &.right {
+        right: 0;
+        width: 167px;
+        -webkit-transform: translate3d(100%,0,0);
+        transform: translate3d(100%,0,0);
+        background-color: $darkgrey;
+        width: 240px;
+
+
+        .close-sidebar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: white;
+            font-size: 28px;
+            background-color: $darkgrey;
+            padding: 3px 15px 6px 15px;
+            text-align: center;
+            display: none;
+        }
+
+        &.open {
+            .close-sidebar {
+                display: inline-block;
+                left: -52px;
+            }
+        }
+    }
+
+    &.open {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+}
+
+
+// SIDEBAR MENU
 .menu {
     list-style: none;
     padding: 0;
@@ -63,7 +126,8 @@ html, body, .wrapper {
     }
 }
 
-.compliance-calendar {
+// RIGHT SIDEBAR'S COMPLIANCE CALENDAR
+.sidebar .compliance-calendar {
     font-size: 14px;
     overflow-y: auto;
     height: 100%;
@@ -73,7 +137,6 @@ html, body, .wrapper {
         display: block;
         line-height: 2.0;
     }
-
 
     h4 {
         margin-top: 1rem;
@@ -108,6 +171,7 @@ html, body, .wrapper {
 }
 
 
+// NAVIGATION BAR
 .navbar {
     background-color: #FFFFFF;
     border-bottom: 1px solid #ddd;
@@ -144,6 +208,8 @@ html, body, .wrapper {
     }
 }
 
+
+// CONTENT
 .content {
     padding: 15px 15px;
     flex: 1;
@@ -188,16 +254,15 @@ html, body, .wrapper {
         }
     }
 
-    // allows in-between spacing for top leve
+
     > .nav-pills > .nav-item > .nav-link {
         display: flex;
         justify-content: space-between;
     }
-
 }
 
 
-
+// MOBILE PHONES - LANDSCAPE
 @media (min-width: 576px) {
     .navbar {
         padding-left: 1rem;
@@ -231,7 +296,7 @@ html, body, .wrapper {
 }
 
 
-
+// IPAD AND DESKTOPS
 @media (min-width: 768px) {
     .navbar {
         width: calc(100% - #{$sidebar-left-width});
