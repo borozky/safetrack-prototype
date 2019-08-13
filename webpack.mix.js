@@ -17,7 +17,7 @@ mix.js('js/main.js', 'dist/js/main.bundle.js')
         proxy: "http://localhost:8000",
         files: [
             './*.html',
-            './dist/*.*',
+            './dist/**/*.*',
         ]
     });
 
