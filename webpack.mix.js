@@ -24,7 +24,7 @@ mix.js('js/main.js', 'dist/js/main.bundle.js')
         autoprefixer: {
             options: {
                 overrideBrowserslist: [
-                    'last 6 versions',
+                    'last 40 versions',
                 ]
             }
         }
