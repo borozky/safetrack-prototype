@@ -183,6 +183,21 @@ html, body, .wrapper {
         &.left {
             display: inline-block;
         }
+        &.right {
+            position: relative;
+
+            .badge {
+                display: inline-block;
+                position: absolute;
+                top: 5px;
+                right: 5px;
+                background-color: #f62459;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                font-size: 12px;
+            }
+        }
     }
 
     .navbar-brand-parent {
