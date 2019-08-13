@@ -222,6 +222,31 @@ html, body, .wrapper {
         }
 
     }
+
+    .dropdown-menu {
+        color: #666666;
+
+        .fa {
+            color: #666666;
+            display: inline-block;
+            margin-right: 5px;
+        }
+
+        .dropdown-item {
+            color: #666666;
+            padding: 5px 20px;
+        }
+
+        a.dropdown-item {
+            &:active, :focus {
+                color: #FFFFFF;
+
+                .fa {
+                    color: #FFFFFF;
+                }
+            }
+        }
+    }
 }
 
 
@@ -348,7 +373,7 @@ html, body, .wrapper {
         }
 
         .content {
-            background-color: #f5f7f8;
+            background-color: $content-bg;
         }
     }
 }
