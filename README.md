@@ -1,6 +1,6 @@
 # Safetrac Admin prototype
 
-Author: Joshua Orozco <[joshua.b.orozco@gmail.com](mailto:joshua.b.orozco@gmail.com)>
+Author: Joshua Orozco
 
 ## Uses
 * Laravel mix
